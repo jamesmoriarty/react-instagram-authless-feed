@@ -3,7 +3,7 @@ import Instagram from './../lib/Instagram'
 import Media from './Media';
 
 class Feed extends Component {
-  static defaultProps = { className: '' }
+  static defaultProps = { className: '', fetchFn: Instagram.getFeed }
 
   constructor(props) {
     super(props);
@@ -12,7 +12,7 @@ class Feed extends Component {
   }
 
   componentDidMount() {
-    Instagram.getFeed(this.props.username)
+    this.props.fetchFn(this.props.username)
       .then(media => this.setState({ media: media }))
   }
 
