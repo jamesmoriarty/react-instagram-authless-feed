@@ -1,16 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { create, act } from 'react-test-renderer';
 import Feed from './Feed';
+import Instagram from './../lib/Instagram'
 
-global.fetch = (url) => {
-  return Promise.resolve(
-    {
-      text: () => { return 'window._sharedData = {"entry_data":{"ProfilePage":[{"graphql":{"user":{"edge_owner_to_timeline_media":{"edges":[]}}}}]}}}</script>' }
-    }
-  )
-}
+it('#render', async() => {
+  Instagram.getFeed = jest.fn().mockReturnValue(
+    Promise.resolve([
+      { url:"https://placeholder.com/640", src:"https://via.placeholder.com/640", alt:"640x640px image from placeholder.com" }
+    ])
+  );
 
-it('#render', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Feed username="jamespaulmoriarty" />, div);
+  let component
+
+  await act(async () => { 
+    component = create(<Feed className="Feed" username="jamespaulmoriarty" />);
+  })
+
+  expect(component.toJSON()).toMatchSnapshot();
+  expect(Instagram.getFeed).toHaveBeenCalled();
 });

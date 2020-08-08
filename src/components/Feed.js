@@ -3,6 +3,8 @@ import Instagram from './../lib/Instagram'
 import Media from './Media';
 
 class Feed extends Component {
+  static defaultProps = { className: '' }
+
   constructor(props) {
     super(props);
 

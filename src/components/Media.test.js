@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Media from './Media';
+import { create } from 'react-test-renderer';
 
 it('#render', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Media url="https://placeholder.com/640" src="https://via.placeholder.com/640" alt="640x640px image from placeholder.com"/>, div);
+  const component = create(<Media url="https://placeholder.com/640" src="https://via.placeholder.com/640" alt="640x640px image from placeholder.com"/>)
+
+  expect(component.toJSON()).toMatchSnapshot();
 });
