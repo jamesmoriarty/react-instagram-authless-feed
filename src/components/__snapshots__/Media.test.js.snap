@@ -1,4 +1,4 @@
-exports[`test #render 1`] = `
+exports[`#render on success 1`] = `
 <a
   href="https://placeholder.com/640"
   rel="noopener"

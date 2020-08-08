@@ -3,6 +3,10 @@ import ReactDOM from "react-dom";
 import Feed from "./components/Feed";
 
 ReactDOM.render(
-  <Feed className="Feed" username="jamespaulmoriarty" />,
+  <Feed
+    username="jamespaulmoriarty"
+    className="Feed"
+    loadingClassName="Loading"
+  />,
   document.getElementById("root")
 );

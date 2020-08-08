@@ -3,21 +3,34 @@ import Instagram from "./../lib/Instagram";
 import Media from "./Media";
 
 class Feed extends Component {
-  static defaultProps = { className: "", fetchFn: Instagram.getFeed };
+  static defaultProps = {
+    className: "",
+    loadingClassName: "",
+    fetchFn: Instagram.getFeed,
+  };
 
   constructor(props) {
     super(props);
 
-    this.state = { media: [] };
+    this.state = { loading: true, media: [] };
   }
 
   componentDidMount() {
     this.props
       .fetchFn(this.props.username)
-      .then((media) => this.setState({ media: media }));
+      .then((media) => this.setState({ loading: false, media: media }))
+      .catch(() => this.setState({ loading: false, media: [] }));
   }
 
   render() {
+    if (this.state.loading)
+      return (
+        <div
+          className={[this.props.className, this.props.loadingClassName].join(
+            " "
+          )}
+        ></div>
+      );
     return (
       <div className={this.props.className}>
         {this.state.media.map((media, index) => (

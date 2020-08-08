@@ -1,7 +1,7 @@
 import Instagram from "./Instagram";
 
 describe("#getFeed", async () => {
-  it("returns empty array", async () => {
+  it("throws error", async () => {
     global.fetch = (url) => {
       return Promise.resolve({
         text: () => {
@@ -10,7 +10,11 @@ describe("#getFeed", async () => {
       });
     };
 
-    expect(await Instagram.getFeed("foo")).toEqual([]);
+    try {
+      await Instagram.getFeed("foo");
+    } catch (e) {
+      expect(e.message).toBe("Cannot read property 'split' of undefined");
+    }
   });
 
   it("returns empty array", async () => {

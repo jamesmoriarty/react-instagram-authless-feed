@@ -2,14 +2,16 @@ import React from "react";
 import Media from "./Media";
 import { create } from "react-test-renderer";
 
-it("#render", () => {
-  const component = create(
-    <Media
-      url="https://placeholder.com/640"
-      src="https://via.placeholder.com/640"
-      alt="640x640px image from placeholder.com"
-    />
-  );
+describe("#render", () => {
+  it("on success", () => {
+    const component = create(
+      <Media
+        url="https://placeholder.com/640"
+        src="https://via.placeholder.com/640"
+        alt="640x640px image from placeholder.com"
+      />
+    );
 
-  expect(component.toJSON()).toMatchSnapshot();
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });

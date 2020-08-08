@@ -1,4 +1,9 @@
-exports[`test #render 1`] = `
+exports[`#render on error 1`] = `
+<div
+  className="Feed" />
+`;
+
+exports[`#render on success 1`] = `
 <div
   className="Feed">
   <a

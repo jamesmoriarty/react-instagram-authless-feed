@@ -60,8 +60,7 @@ class Instagram {
         (body) => body.split("window._sharedData = ")[1].split("</script>")[0]
       )
       .then((data) => JSON.parse(data.substr(0, data.length - 1)))
-      .then((json) => mapMedia(json))
-      .catch((err) => []);
+      .then((json) => mapMedia(json));
   }
 }
 

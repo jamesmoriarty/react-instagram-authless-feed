@@ -14,10 +14,11 @@ npm install jamesmoriarty/react-instagram-authless-feed
 
 ## Props
 
-| Name      | Description          | Required |
-| --------- | -------------------- | -------- |
-| username  | Instagram username.  | true     |
-| className | Container css class. | false    |
+| Name             | Description                  | Required |
+| ---------------- | ---------------------------- | -------- |
+| username         | Instagram username.          | true     |
+| className        | Container css class.         | false    |
+| loadingClassName | Container loading css class. | false    |
 
 ## Usage
 
@@ -25,7 +26,7 @@ npm install jamesmoriarty/react-instagram-authless-feed
 import Feed from "react-instagram-authless-feed"
 ...
 ReactDOM.render(
-  <Feed className="Feed" username="jamespaulmoriarty" />,
+  <Feed username="jamespaulmoriarty" className="Feed" loadingClassName="Loading"/>,
   document.getElementById('root')
 );
 ```
