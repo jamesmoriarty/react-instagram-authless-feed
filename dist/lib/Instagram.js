@@ -75,8 +75,6 @@ var Instagram = /*#__PURE__*/function () {
         return JSON.parse(data.substr(0, data.length - 1));
       }).then(function (json) {
         return mapMedia(json);
-      })["catch"](function (err) {
-        return [];
       });
     }
   }]);

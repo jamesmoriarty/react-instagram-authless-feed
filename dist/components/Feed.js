@@ -53,6 +53,7 @@ var Feed = /*#__PURE__*/function (_Component) {
 
     _this = _super.call(this, props);
     _this.state = {
+      loading: true,
       media: []
     };
     return _this;
@@ -63,15 +64,24 @@ var Feed = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      this.props.fetchFn(this.props.username).then(function (media) {
+      this.props.getFeedFn(this.props.username).then(function (media) {
         return _this2.setState({
+          loading: false,
           media: media
+        });
+      })["catch"](function () {
+        return _this2.setState({
+          loading: false,
+          media: []
         });
       });
     }
   }, {
     key: "render",
     value: function render() {
+      if (this.state.loading) return /*#__PURE__*/_react["default"].createElement("div", {
+        className: [this.props.className, this.props.loadingClassName].join(" ")
+      });
       return /*#__PURE__*/_react["default"].createElement("div", {
         className: this.props.className
       }, this.state.media.map(function (media, index) {
@@ -90,7 +100,8 @@ var Feed = /*#__PURE__*/function (_Component) {
 
 _defineProperty(Feed, "defaultProps", {
   className: "",
-  fetchFn: _Instagram["default"].getFeed
+  loadingClassName: "",
+  getFeedFn: _Instagram["default"].getFeed
 });
 
 var _default = Feed;

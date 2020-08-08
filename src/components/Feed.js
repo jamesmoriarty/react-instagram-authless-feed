@@ -6,7 +6,7 @@ class Feed extends Component {
   static defaultProps = {
     className: "",
     loadingClassName: "",
-    fetchFn: Instagram.getFeed,
+    getFeedFn: Instagram.getFeed,
   };
 
   constructor(props) {
@@ -17,7 +17,7 @@ class Feed extends Component {
 
   componentDidMount() {
     this.props
-      .fetchFn(this.props.username)
+      .getFeedFn(this.props.username)
       .then((media) => this.setState({ loading: false, media: media }))
       .catch(() => this.setState({ loading: false, media: [] }));
   }
