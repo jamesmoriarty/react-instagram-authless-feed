@@ -24,6 +24,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "dist": "npx babel --presets @babel/preset-env --presets @babel/preset-react src/ --ignore 'src/**/*.test.js' --out-dir=dist/"
+    "dist": "npx babel --presets @babel/preset-env --presets @babel/preset-react src/ --ignore 'src/**/*.test.js' --out-dir=dist/",
+    "pretty": "npx prettier --write ."
   }
 }

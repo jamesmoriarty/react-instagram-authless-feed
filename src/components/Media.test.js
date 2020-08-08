@@ -1,9 +1,15 @@
-import React from 'react';
-import Media from './Media';
-import { create } from 'react-test-renderer';
+import React from "react";
+import Media from "./Media";
+import { create } from "react-test-renderer";
 
-it('#render', () => {
-  const component = create(<Media url="https://placeholder.com/640" src="https://via.placeholder.com/640" alt="640x640px image from placeholder.com"/>)
+it("#render", () => {
+  const component = create(
+    <Media
+      url="https://placeholder.com/640"
+      src="https://via.placeholder.com/640"
+      alt="640x640px image from placeholder.com"
+    />
+  );
 
   expect(component.toJSON()).toMatchSnapshot();
 });

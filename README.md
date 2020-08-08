@@ -15,7 +15,7 @@ npm install jamesmoriarty/react-instagram-authless-feed
 ## Props
 
 | Name      | Description          | Required |
-|-----------|----------------------|----------|
+| --------- | -------------------- | -------- |
 | username  | Instagram username.  | true     |
 | className | Container css class. | false    |
 
