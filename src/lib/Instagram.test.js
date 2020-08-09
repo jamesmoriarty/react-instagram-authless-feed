@@ -13,7 +13,7 @@ describe("#getFeed", async () => {
     try {
       await Instagram.getFeed("foo");
     } catch (e) {
-      expect(e.message).toBe("Cannot read property 'split' of undefined");
+      expect(e.message).toBe("Cannot parse response body");
     }
   });
 

@@ -52,14 +52,22 @@ class Instagram {
       });
     };
 
+    const getJSON = (body) => {
+      try {
+        const data = body
+          .split("window._sharedData = ")[1]
+          .split("</script>")[0];
+        return JSON.parse(data.substr(0, data.length - 1));
+      } catch (err) {
+        throw Error("Cannot parse response body");
+      }
+    };
+
     const url = "https://www.instagram.com/" + username + "/";
 
     return fetch(url)
       .then((resp) => resp.text())
-      .then(
-        (body) => body.split("window._sharedData = ")[1].split("</script>")[0]
-      )
-      .then((data) => JSON.parse(data.substr(0, data.length - 1)))
+      .then((body) => getJSON(body))
       .then((json) => mapMedia(json));
   }
 }
