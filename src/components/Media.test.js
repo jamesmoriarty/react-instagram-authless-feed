@@ -3,7 +3,7 @@ import Media from "./Media";
 import { create } from "react-test-renderer";
 
 describe("#render", () => {
-  it("on success", () => {
+  it("returns html", () => {
     const component = create(
       <Media
         url="https://placeholder.com/640"

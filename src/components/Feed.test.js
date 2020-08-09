@@ -3,7 +3,7 @@ import { create, act } from "react-test-renderer";
 import Feed from "./Feed";
 
 describe("#render", async () => {
-  it("on success", async () => {
+  it("return html", async () => {
     const getFeedFn = (username) =>
       Promise.resolve([
         {
@@ -28,7 +28,7 @@ describe("#render", async () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  it("on error", async () => {
+  it("returns error html", async () => {
     const getFeedFn = (username) => Promise.reject(new Error("fail"));
 
     let component;

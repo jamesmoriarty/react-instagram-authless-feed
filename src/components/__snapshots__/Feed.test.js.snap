@@ -1,9 +1,4 @@
-exports[`#render on error 1`] = `
-<div
-  className="Feed" />
-`;
-
-exports[`#render on success 1`] = `
+exports[`#render return html 1`] = `
 <div
   className="Feed">
   <a
@@ -15,4 +10,9 @@ exports[`#render on success 1`] = `
       src="https://via.placeholder.com/640" />
   </a>
 </div>
+`;
+
+exports[`#render returns error html 1`] = `
+<div
+  className="Feed" />
 `;
