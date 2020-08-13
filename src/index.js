@@ -5,8 +5,8 @@ import Feed from "./components/Feed";
 ReactDOM.render(
   <Feed
     username="jamespaulmoriarty"
-    className="Feed"
-    loadingClassName="Loading"
+    classname="Feed"
+    classnameLoading="Loading"
   />,
   document.getElementById("root")
 );

@@ -4,8 +4,8 @@ import Media from "./Media";
 
 class Feed extends Component {
   static defaultProps = {
-    className: "",
-    loadingClassName: "",
+    classname: "",
+    classnameLoading: "",
     getFeedFn: Instagram.getFeed,
   };
 
@@ -23,16 +23,12 @@ class Feed extends Component {
   }
 
   render() {
-    if (this.state.loading)
-      return (
-        <div
-          className={[this.props.className, this.props.loadingClassName].join(
-            " "
-          )}
-        ></div>
-      );
+    const classname = this.state.loading
+      ? [this.props.classname, this.props.classnameLoading].join(" ")
+      : this.props.classname;
+
     return (
-      <div className={this.props.className}>
+      <div className={classname}>
         {this.state.media.map((media, index) => (
           <Media key={index} src={media.src} url={media.url} alt={media.alt} />
         ))}

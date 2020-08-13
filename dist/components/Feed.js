@@ -79,11 +79,9 @@ var Feed = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      if (this.state.loading) return /*#__PURE__*/_react["default"].createElement("div", {
-        className: [this.props.className, this.props.loadingClassName].join(" ")
-      });
+      var classname = this.state.loading ? [this.props.classname, this.props.classnameLoading].join(" ") : this.props.classname;
       return /*#__PURE__*/_react["default"].createElement("div", {
-        className: this.props.className
+        className: classname
       }, this.state.media.map(function (media, index) {
         return /*#__PURE__*/_react["default"].createElement(_Media["default"], {
           key: index,
@@ -99,8 +97,8 @@ var Feed = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 _defineProperty(Feed, "defaultProps", {
-  className: "",
-  loadingClassName: "",
+  classname: "",
+  classnameLoading: "",
   getFeedFn: _Instagram["default"].getFeed
 });
 

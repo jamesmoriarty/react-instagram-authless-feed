@@ -18,7 +18,7 @@ describe("#render", async () => {
     await act(async () => {
       component = create(
         <Feed
-          className="Feed"
+          classname="Feed"
           username="jamespaulmoriarty"
           getFeedFn={getFeedFn}
         />
@@ -36,7 +36,7 @@ describe("#render", async () => {
     await act(async () => {
       component = create(
         <Feed
-          className="Feed"
+          classname="Feed"
           username="jamespaulmoriarty"
           getFeedFn={getFeedFn}
         />

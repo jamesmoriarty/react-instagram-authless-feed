@@ -66,13 +66,20 @@ var Instagram = /*#__PURE__*/function () {
         });
       };
 
+      var getJSON = function getJSON(body) {
+        try {
+          var data = body.split("window._sharedData = ")[1].split("</script>")[0];
+          return JSON.parse(data.substr(0, data.length - 1));
+        } catch (err) {
+          throw Error("Cannot parse response body");
+        }
+      };
+
       var url = "https://www.instagram.com/" + username + "/";
       return fetch(url).then(function (resp) {
         return resp.text();
       }).then(function (body) {
-        return body.split("window._sharedData = ")[1].split("</script>")[0];
-      }).then(function (data) {
-        return JSON.parse(data.substr(0, data.length - 1));
+        return getJSON(body);
       }).then(function (json) {
         return mapMedia(json);
       });

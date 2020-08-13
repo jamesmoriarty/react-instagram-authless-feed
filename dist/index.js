@@ -10,6 +10,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 _reactDom["default"].render( /*#__PURE__*/_react["default"].createElement(_Feed["default"], {
   username: "jamespaulmoriarty",
-  className: "Feed",
-  loadingClassName: "Loading"
+  classname: "Feed",
+  classnameLoading: "Loading"
 }), document.getElementById("root"));
