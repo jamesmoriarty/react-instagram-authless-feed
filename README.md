@@ -9,6 +9,8 @@ Simple react component to render an Instagram feed from username.
 - [repl.it](https://repl.it/@jamesmoriarty1/SizzlingNonstopCallbacks)
 - [jamesmoriarty.xyz](http://www.jamesmoriarty.xyz/react-instagram-authless-feed/)
 
+## Screenshots
+
 ![Screenshot](docs/screenshot.png)
 
 ## Install
