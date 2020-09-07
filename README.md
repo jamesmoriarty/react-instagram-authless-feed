@@ -9,7 +9,7 @@ Simple react component to render an Instagram [feed from username](http://www.ja
 ## Install
 
 ```
-npm install jamesmoriarty/react-instagram-authless-feed#v1.0.1
+npm install jamesmoriarty/react-instagram-authless-feed#v1.0.2
 ```
 
 ## Props
