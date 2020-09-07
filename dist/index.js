@@ -9,7 +9,7 @@ var _Feed = _interopRequireDefault(require("./components/Feed"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 _reactDom["default"].render( /*#__PURE__*/_react["default"].createElement(_Feed["default"], {
-  username: "jamespaulmoriarty",
-  classname: "Feed",
-  classnameLoading: "Loading"
+  userName: "jamespaulmoriarty",
+  className: "Feed",
+  classNameLoading: "Loading"
 }), document.getElementById("root"));

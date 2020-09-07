@@ -18,7 +18,7 @@ var Instagram = /*#__PURE__*/function () {
 
   _createClass(Instagram, null, [{
     key: "getFeed",
-    value: function getFeed(username) {
+    value: function getFeed(userName) {
       var mapMedia = function mapMedia(json) {
         var thumbnailIndex = function thumbnailIndex(node) {
           node.thumbnail_resources.forEach(function (item, index) {
@@ -75,7 +75,7 @@ var Instagram = /*#__PURE__*/function () {
         }
       };
 
-      var url = "https://www.instagram.com/" + username + "/";
+      var url = "https://www.instagram.com/" + userName + "/";
       return fetch(url).then(function (resp) {
         return resp.text();
       }).then(function (body) {

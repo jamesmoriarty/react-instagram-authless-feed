@@ -1,7 +1,7 @@
 {
   "name": "react-instagram-authless-feed",
   "homepage": "https://jamesmoriarty.github.io/react-instagram-authless-feed",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/components/Feed.js",
   "private": true,
   "dependencies": {},
@@ -24,7 +24,7 @@
     "test": "react-scripts test --env=jsdom --coverage=true",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages --add -d build",
     "dist": "npx babel --presets @babel/preset-env --presets @babel/preset-react src/ --plugins @babel/plugin-proposal-class-properties --ignore 'src/**/*.test.js' --out-dir=dist/",
     "pretty": "npx prettier --write ."
   }

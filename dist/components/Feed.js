@@ -64,7 +64,7 @@ var Feed = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      this.props.getFeedFn(this.props.username).then(function (media) {
+      this.props.getFeedFn(this.props.userName).then(function (media) {
         return _this2.setState({
           loading: false,
           media: media
@@ -79,9 +79,9 @@ var Feed = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var classname = this.state.loading ? [this.props.classname, this.props.classnameLoading].join(" ") : this.props.classname;
+      var className = this.state.loading ? [this.props.className, this.props.classNameLoading].join(" ") : this.props.className;
       return /*#__PURE__*/_react["default"].createElement("div", {
-        className: classname
+        className: className
       }, this.state.media.map(function (media, index) {
         return /*#__PURE__*/_react["default"].createElement(_Media["default"], {
           key: index,
@@ -97,8 +97,8 @@ var Feed = /*#__PURE__*/function (_Component) {
 }(_react.Component);
 
 _defineProperty(Feed, "defaultProps", {
-  classname: "",
-  classnameLoading: "",
+  className: "",
+  classNameLoading: "",
   getFeedFn: _Instagram["default"].getFeed
 });
 

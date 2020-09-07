@@ -4,9 +4,9 @@ import Feed from "./components/Feed";
 
 ReactDOM.render(
   <Feed
-    username="jamespaulmoriarty"
-    classname="Feed"
-    classnameLoading="Loading"
+    userName="jamespaulmoriarty"
+    className="Feed"
+    classNameLoading="Loading"
   />,
   document.getElementById("root")
 );

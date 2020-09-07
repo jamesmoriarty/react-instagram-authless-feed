@@ -9,16 +9,16 @@ Simple react component to render an Instagram [feed from username](http://www.ja
 ## Install
 
 ```
-npm install jamesmoriarty/react-instagram-authless-feed
+npm install jamesmoriarty/react-instagram-authless-feed#v1.0.1
 ```
 
 ## Props
 
 | Name             | Description                  | Required |
 | ---------------- | ---------------------------- | -------- |
-| username         | Instagram username.          | true     |
-| classname        | Container css class.         | false    |
-| classnameLoading | Container loading css class. | false    |
+| userName         | Instagram userName.          | true     |
+| className        | Container css class.         | false    |
+| classNameLoading | Container loading css class. | false    |
 
 ## Usage
 
@@ -26,7 +26,7 @@ npm install jamesmoriarty/react-instagram-authless-feed
 import Feed from "react-instagram-authless-feed"
 ...
 ReactDOM.render(
-  <Feed username="jamespaulmoriarty" classname="Feed" classnameLoading="Loading"/>,
+  <Feed userName="jamespaulmoriarty" className="Feed" classNameLoading="Loading"/>,
   document.getElementById('root')
 );
 ```

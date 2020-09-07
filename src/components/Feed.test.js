@@ -4,7 +4,7 @@ import Feed from "./Feed";
 
 describe("#render", async () => {
   it("return html", async () => {
-    const getFeedFn = (username) =>
+    const getFeedFn = (userName) =>
       Promise.resolve([
         {
           url: "https://placeholder.com/640",
@@ -18,8 +18,8 @@ describe("#render", async () => {
     await act(async () => {
       component = create(
         <Feed
-          classname="Feed"
-          username="jamespaulmoriarty"
+          className="Feed"
+          userName="jamespaulmoriarty"
           getFeedFn={getFeedFn}
         />
       );
@@ -29,15 +29,15 @@ describe("#render", async () => {
   });
 
   it("returns error html", async () => {
-    const getFeedFn = (username) => Promise.reject(new Error("fail"));
+    const getFeedFn = (userName) => Promise.reject(new Error("fail"));
 
     let component;
 
     await act(async () => {
       component = create(
         <Feed
-          classname="Feed"
-          username="jamespaulmoriarty"
+          className="Feed"
+          userName="jamespaulmoriarty"
           getFeedFn={getFeedFn}
         />
       );

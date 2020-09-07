@@ -1,5 +1,5 @@
 class Instagram {
-  static getFeed(username) {
+  static getFeed(userName) {
     const mapMedia = (json) => {
       const thumbnailIndex = (node) => {
         node.thumbnail_resources.forEach((item, index) => {
@@ -63,7 +63,7 @@ class Instagram {
       }
     };
 
-    const url = "https://www.instagram.com/" + username + "/";
+    const url = "https://www.instagram.com/" + userName + "/";
 
     return fetch(url)
       .then((resp) => resp.text())
