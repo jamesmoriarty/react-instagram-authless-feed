@@ -22,6 +22,8 @@
       }
 
       .Loading {
+        position: absolute;
+        left: 50%;
         border: 16px solid #f3f3f3; /* Light grey */
         border-top: 16px solid #444; /* Blue */
         border-radius: 50%;
@@ -47,6 +49,16 @@
         margin: 1% 1%;
         width: 23%;
         float: left;
+        animation: fadein 3s;
+      }
+
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
     </style>
   </head>
