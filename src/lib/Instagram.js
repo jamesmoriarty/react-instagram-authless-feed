@@ -17,10 +17,9 @@ class Instagram {
 
       const src = (node) => {
         switch (node.__typename) {
-          case "GraphSidecar":
-            return node.thumbnail_resources[thumbnailIndex(node)].src;
           case "GraphVideo":
             return node.thumbnail_src;
+          case "GraphSidecar":
           default:
             return node.thumbnail_resources[thumbnailIndex(node)].src;
         }
