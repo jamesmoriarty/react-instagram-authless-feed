@@ -12,7 +12,4 @@ exports[`#render return html 1`] = `
 </div>
 `;
 
-exports[`#render returns error html 1`] = `
-<div
-  className="Feed" />
-`;
+exports[`#render returns error html 1`] = `null`;

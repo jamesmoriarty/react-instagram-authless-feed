@@ -19,10 +19,12 @@ class Feed extends Component {
     this.props
       .getFeedFn(this.props.userName)
       .then((media) => this.setState({ loading: false, media: media }))
-      .catch(() => this.setState({ loading: false, media: [] }));
+      .catch((err) => this.setState({ error: err }));
   }
 
   render() {
+    if (this.state.error) throw this.state.error;
+
     const className = this.state.loading
       ? [this.props.className, this.props.classNameLoading].join(" ")
       : this.props.className;

@@ -22,13 +22,30 @@
       }
 
       .Loading {
+        animation: spin 2s linear infinite;
         position: block;
         border: 16px solid #f3f3f3; /* Light grey */
         border-top: 16px solid #444; /* Blue */
         border-radius: 50%;
-        animation: spin 2s linear infinite;
         width: 5vh;
         height: 5vh;
+      }
+
+      .Feed {
+        margin: auto;
+        padding: 1% 1%;
+      }
+
+      .Feed a {
+        display: inline-block;
+        margin: 1% 1%;
+        width: 23%;
+        line-height: 0;
+      }
+
+      .Feed a img {
+        animation: fadein 3s;
+        width: 100%;
       }
 
       @keyframes spin {
@@ -38,18 +55,6 @@
         100% {
           transform: rotate(360deg);
         }
-      }
-
-      .Feed {
-        margin: auto;
-        padding: 1% 1%;
-      }
-
-      .Feed a img {
-        margin: 1% 1%;
-        width: 23%;
-        float: left;
-        animation: fadein 3s;
       }
 
       @keyframes fadein {
