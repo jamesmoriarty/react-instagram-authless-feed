@@ -19,7 +19,7 @@ class Feed extends Component {
     this.props
       .getFeedFn(this.props.userName)
       .then((media) => this.setState({ loading: false, media: media }))
-      .catch((err) => this.setState({ error: err }));
+      .catch((error) => this.setState({ error }));
   }
 
   render() {
