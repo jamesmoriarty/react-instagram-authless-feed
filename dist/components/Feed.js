@@ -69,16 +69,16 @@ var Feed = /*#__PURE__*/function (_Component) {
           loading: false,
           media: media
         });
-      })["catch"](function () {
+      })["catch"](function (error) {
         return _this2.setState({
-          loading: false,
-          media: []
+          error: error
         });
       });
     }
   }, {
     key: "render",
     value: function render() {
+      if (this.state.error) throw this.state.error;
       var className = this.state.loading ? [this.props.className, this.props.classNameLoading].join(" ") : this.props.className;
       return /*#__PURE__*/_react["default"].createElement("div", {
         className: className
