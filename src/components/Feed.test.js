@@ -29,17 +29,43 @@ describe("#render", async () => {
   });
 
   it("returns error html", async () => {
+    class ErrorBoundary extends React.Component {
+      constructor(props) {
+        super(props);
+
+        this.state = { hasError: false };
+      }
+
+      static getDerivedStateFromError(error) {
+        return { hasError: true };
+      }
+
+      componentDidCatch(error, errorInfo) {
+        // You can also log the error to an error reporting service
+      }
+
+      render() {
+        if (this.state.hasError) {
+          return <div>Something went wrong.</div>;
+        }
+
+        return this.props.children;
+      }
+    }
+
     const getFeedFn = (userName) => Promise.reject(new Error("fail"));
 
     let component;
 
     await act(async () => {
       component = create(
-        <Feed
-          className="Feed"
-          userName="jamespaulmoriarty"
-          getFeedFn={getFeedFn}
-        />
+        <ErrorBoundary>
+          <Feed
+            className="Feed"
+            userName="jamespaulmoriarty"
+            getFeedFn={getFeedFn}
+          />
+        </ErrorBoundary>
       );
     });
 
