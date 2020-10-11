@@ -12,4 +12,8 @@ exports[`#render return html 1`] = `
 </div>
 `;
 
-exports[`#render returns error html 1`] = `null`;
+exports[`#render returns error html 1`] = `
+<div>
+  Something went wrong.
+</div>
+`;
