@@ -1,4 +1,10 @@
-exports[`#render return html 1`] = `
+exports[`#render returns error html 1`] = `
+<div>
+  Something went wrong.
+</div>
+`;
+
+exports[`#render with limit return html 1`] = `
 <div
   className="Feed">
   <a
@@ -12,8 +18,16 @@ exports[`#render return html 1`] = `
 </div>
 `;
 
-exports[`#render returns error html 1`] = `
-<div>
-  Something went wrong.
+exports[`#render without limit return html 1`] = `
+<div
+  className="Feed">
+  <a
+    href="https://placeholder.com/640"
+    rel="noopener"
+    target="_blank">
+    <img
+      alt="640x640px image from placeholder.com"
+      src="https://via.placeholder.com/640" />
+  </a>
 </div>
 `;

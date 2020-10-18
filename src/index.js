@@ -7,6 +7,7 @@ ReactDOM.render(
     userName="jamespaulmoriarty"
     className="Feed"
     classNameLoading="Loading"
+    limit="8"
   />,
   document.getElementById("root")
 );

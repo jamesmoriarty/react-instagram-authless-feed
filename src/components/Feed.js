@@ -7,6 +7,7 @@ class Feed extends Component {
     className: "",
     classNameLoading: "",
     getFeedFn: Instagram.getFeed,
+    limit: 12,
   };
 
   constructor(props) {
@@ -18,7 +19,12 @@ class Feed extends Component {
   componentDidMount() {
     this.props
       .getFeedFn(this.props.userName)
-      .then((media) => this.setState({ loading: false, media: media }))
+      .then((media) =>
+        this.setState({
+          loading: false,
+          media: media.slice(0, this.props.limit),
+        })
+      )
       .catch((error) => this.setState({ error }));
   }
 
