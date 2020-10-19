@@ -3,29 +3,64 @@ import { create, act } from "react-test-renderer";
 import Feed from "./Feed";
 
 describe("#render", async () => {
-  it("return html", async () => {
-    const getFeedFn = (userName) =>
-      Promise.resolve([
-        {
-          url: "https://placeholder.com/640",
-          src: "https://via.placeholder.com/640",
-          alt: "640x640px image from placeholder.com",
-        },
-      ]);
+  describe("without limit", async () => {
+    it("return html", async () => {
+      const getFeedFn = (userName) =>
+        Promise.resolve([
+          {
+            url: "https://placeholder.com/640",
+            src: "https://via.placeholder.com/640",
+            alt: "640x640px image from placeholder.com",
+          },
+        ]);
 
-    let component;
+      let component;
 
-    await act(async () => {
-      component = create(
-        <Feed
-          className="Feed"
-          userName="jamespaulmoriarty"
-          getFeedFn={getFeedFn}
-        />
-      );
+      await act(async () => {
+        component = create(
+          <Feed
+            className="Feed"
+            userName="jamespaulmoriarty"
+            getFeedFn={getFeedFn}
+          />
+        );
+      });
+
+      expect(component.toJSON()).toMatchSnapshot();
     });
+  });
 
-    expect(component.toJSON()).toMatchSnapshot();
+  describe("with limit", async () => {
+    it("return html", async () => {
+      const getFeedFn = (userName) =>
+        Promise.resolve([
+          {
+            url: "https://placeholder.com/640",
+            src: "https://via.placeholder.com/640",
+            alt: "640x640px image from placeholder.com",
+          },
+          {
+            url: "https://placeholder.com/640",
+            src: "https://via.placeholder.com/640",
+            alt: "640x640px image from placeholder.com",
+          },
+        ]);
+
+      let component;
+
+      await act(async () => {
+        component = create(
+          <Feed
+            className="Feed"
+            userName="jamespaulmoriarty"
+            getFeedFn={getFeedFn}
+            limit="1"
+          />
+        );
+      });
+
+      expect(component.toJSON()).toMatchSnapshot();
+    });
   });
 
   it("returns error html", async () => {

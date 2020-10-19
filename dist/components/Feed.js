@@ -67,7 +67,7 @@ var Feed = /*#__PURE__*/function (_Component) {
       this.props.getFeedFn(this.props.userName).then(function (media) {
         return _this2.setState({
           loading: false,
-          media: media
+          media: media.slice(0, _this2.props.limit)
         });
       })["catch"](function (error) {
         return _this2.setState({
@@ -99,7 +99,8 @@ var Feed = /*#__PURE__*/function (_Component) {
 _defineProperty(Feed, "defaultProps", {
   className: "",
   classNameLoading: "",
-  getFeedFn: _Instagram["default"].getFeed
+  getFeedFn: _Instagram["default"].getFeed,
+  limit: 12
 });
 
 var _default = Feed;
