@@ -26,7 +26,7 @@ npm install jamesmoriarty/react-instagram-authless-feed#v1.1.1
 | userName         | Instagram user name.         | true     |
 | className        | Container css class.         | false    |
 | classNameLoading | Container loading css class. | false    |
-| limit            | Limit images returned.       | 12       |
+| limit            | Limit images returned.       | false    |
 
 ## Usage
 
