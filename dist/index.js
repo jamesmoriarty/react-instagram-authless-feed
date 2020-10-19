@@ -11,5 +11,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 _reactDom["default"].render( /*#__PURE__*/_react["default"].createElement(_Feed["default"], {
   userName: "jamespaulmoriarty",
   className: "Feed",
-  classNameLoading: "Loading"
+  classNameLoading: "Loading",
+  limit: "8"
 }), document.getElementById("root"));
