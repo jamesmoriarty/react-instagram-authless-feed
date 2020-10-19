@@ -16,7 +16,7 @@ Simple react component to render an Instagram feed from user name.
 ## Install
 
 ```
-npm install jamesmoriarty/react-instagram-authless-feed#v1.1.0
+npm install jamesmoriarty/react-instagram-authless-feed#v1.1.1
 ```
 
 ## Props
