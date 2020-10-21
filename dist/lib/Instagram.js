@@ -20,48 +20,52 @@ var Instagram = /*#__PURE__*/function () {
     key: "getFeed",
     value: function getFeed(userName) {
       var mapMedia = function mapMedia(json) {
-        var thumbnailIndex = function thumbnailIndex(node) {
-          node.thumbnail_resources.forEach(function (item, index) {
-            if (item.config_width === 640) {
-              return index;
-            }
-          });
-          return 4; // MAGIC
-        };
-
-        var url = function url(node) {
-          return "https://www.instagram.com/p/" + node.shortcode;
-        };
-
-        var src = function src(node) {
-          switch (node.__typename) {
-            case "GraphVideo":
-              return node.thumbnail_src;
-
-            case "GraphSidecar":
-            default:
-              return node.thumbnail_resources[thumbnailIndex(node)].src;
-          }
-        };
-
-        var alt = function alt(node) {
-          if (node.edge_media_to_caption.edges[0] && node.edge_media_to_caption.edges[0].node) {
-            return node.edge_media_to_caption.edges[0].node.text;
-          } else if (node.accessibility_caption) {
-            return node.accessibility_caption;
-          } else {
-            return "";
-          }
-        };
-
-        var edges = json.entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges;
-        return edges.map(function (edge) {
-          return {
-            alt: alt(edge.node),
-            url: url(edge.node),
-            src: src(edge.node)
+        try {
+          var thumbnailIndex = function thumbnailIndex(node) {
+            node.thumbnail_resources.forEach(function (item, index) {
+              if (item.config_width === 640) {
+                return index;
+              }
+            });
+            return 4; // MAGIC
           };
-        });
+
+          var _url = function _url(node) {
+            return "https://www.instagram.com/p/" + node.shortcode;
+          };
+
+          var src = function src(node) {
+            switch (node.__typename) {
+              case "GraphVideo":
+                return node.thumbnail_src;
+
+              case "GraphSidecar":
+              default:
+                return node.thumbnail_resources[thumbnailIndex(node)].src;
+            }
+          };
+
+          var alt = function alt(node) {
+            if (node.edge_media_to_caption.edges[0] && node.edge_media_to_caption.edges[0].node) {
+              return node.edge_media_to_caption.edges[0].node.text;
+            } else if (node.accessibility_caption) {
+              return node.accessibility_caption;
+            } else {
+              return "";
+            }
+          };
+
+          var edges = json.entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges;
+          return edges.map(function (edge) {
+            return {
+              alt: alt(edge.node),
+              url: _url(edge.node),
+              src: src(edge.node)
+            };
+          });
+        } catch (err) {
+          throw Error("cannot map media array");
+        }
       };
 
       var getJSON = function getJSON(body) {
@@ -69,7 +73,7 @@ var Instagram = /*#__PURE__*/function () {
           var data = body.split("window._sharedData = ")[1].split("</script>")[0];
           return JSON.parse(data.substr(0, data.length - 1));
         } catch (err) {
-          throw Error("Cannot parse response body");
+          throw Error("cannot parse response body");
         }
       };
 
