@@ -2,7 +2,7 @@
 
 ![ci](https://github.com/jamesmoriarty/react-instagram-authless-feed/workflows/ci/badge.svg) ![GitHub package.json version](https://img.shields.io/github/package-json/v/jamesmoriarty/react-instagram-authless-feed)
 
-Simple react component to render an Instagram feed from user name.
+Simple React component to render an Instagram feed from user name.
 
 ## Examples
 
