@@ -6,6 +6,7 @@ class Feed extends Component {
   static defaultProps = {
     className: "",
     classNameLoading: "",
+    imageClassName: "",
     getFeedFn: Instagram.getFeed,
     limit: 12,
   };
@@ -38,7 +39,7 @@ class Feed extends Component {
     return (
       <div className={className}>
         {this.state.media.map((media, index) => (
-          <Media key={index} src={media.src} url={media.url} alt={media.alt} />
+          <Media className={this.props.imageClassName} key={index} src={media.src} url={media.url} alt={media.alt} />
         ))}
       </div>
     );

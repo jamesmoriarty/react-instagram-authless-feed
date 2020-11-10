@@ -4,7 +4,7 @@ class Media extends Component {
   render() {
     return (
       <a href={this.props.url} rel="noopener" target="_blank">
-        <img src={this.props.src} alt={this.props.alt}></img>
+        <img className={this.props.imageClassName} src={this.props.src} alt={this.props.alt}></img>
       </a>
     );
   }
