@@ -39,6 +39,8 @@ ReactDOM.render(
 );
 ```
 
+It's recommended to wrap the component in an [Error Boundary](https://reactjs.org/docs/error-boundaries.html) because of Instagram's rate limiting. _See [#12](https://github.com/jamesmoriarty/react-instagram-authless-feed/issues/12)_.
+
 ## Development
 
 ```
