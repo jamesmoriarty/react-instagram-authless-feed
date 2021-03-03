@@ -7,4 +7,3 @@
 ## 1.0.0
 
 - Initial release to establish API and usage.
-
