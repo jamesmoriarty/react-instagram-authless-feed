@@ -66,7 +66,7 @@ class Instagram {
       }
     };
 
-    const url = "https://www.instagram.com/" + userName + "/";
+    const url = 'https://images' + ~~(Math.random() * 3333) + '-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=https://www.instagram.com/' + userName + '/';
 
     return fetch(url)
       .then((resp) => resp.text())

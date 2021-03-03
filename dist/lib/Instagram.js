@@ -77,7 +77,7 @@ var Instagram = /*#__PURE__*/function () {
         }
       };
 
-      var url = "https://www.instagram.com/" + userName + "/";
+      var url = 'https://images' + ~~(Math.random() * 3333) + '-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=https://www.instagram.com/' + userName + '/';
       return fetch(url).then(function (resp) {
         return resp.text();
       }).then(function (body) {
