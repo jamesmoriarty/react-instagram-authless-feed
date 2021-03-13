@@ -77,14 +77,24 @@ var Instagram = /*#__PURE__*/function () {
         }
       };
 
-      var url = 'https://images' + ~~(Math.random() * 3333) + '-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=https://www.instagram.com/' + userName + '/';
-      return fetch(url).then(function (resp) {
-        return resp.text();
-      }).then(function (body) {
-        return getJSON(body);
-      }).then(function (json) {
-        return mapMedia(json);
-      });
+      var url = function url() {
+        return "https://images" + ~~(Math.random() * 3333) + "-focus-opensocial.googleusercontent.com/gadgets/proxy?container=none&url=https://www.instagram.com/" + userName + "/";
+      };
+
+      var fetchWithRetry = function fetchWithRetry(n, err) {
+        if (n <= 1) throw err;
+        return fetch(url()).then(function (resp) {
+          return resp.text();
+        }).then(function (body) {
+          return getJSON(body);
+        }).then(function (json) {
+          return mapMedia(json);
+        })["catch"](function (err) {
+          return fetchWithRetry(n - 1, err);
+        });
+      };
+
+      return fetchWithRetry(5);
     }
   }]);
 
