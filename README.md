@@ -30,6 +30,8 @@ npm install jamesmoriarty/react-instagram-authless-feed#v2.0.0
 
 ## Usage
 
+_Please use with caution_ - Instagram's been blocking the workarounds this solution depends on more regularly.
+
 ```javascript
 import Feed from "react-instagram-authless-feed"
 ...
