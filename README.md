@@ -2,7 +2,7 @@
 
 ![ci](https://github.com/jamesmoriarty/react-instagram-authless-feed/workflows/ci/badge.svg) ![GitHub package.json version](https://img.shields.io/github/package-json/v/jamesmoriarty/react-instagram-authless-feed)
 
-⚠️Recent security improvements to [instagram.com](https://www.instagram.com/) have broken the way this library extracts user feed data. As a result, I am  archiving the project.
+⚠️Recent security improvements to [instagram.com](https://www.instagram.com/) have broken the way this library extracts user feed data. As a result, I am archiving the project.
 
 ## Examples
 
